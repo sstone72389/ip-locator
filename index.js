@@ -35,7 +35,7 @@ $.get("https://api.ipdata.co", function(response) {
           {
             "latitude": "42.71860400",
             "longitude": "-73.80325800",
-            "content": "Pure Hockey #78>145A Wolf Road Albany, NY",
+            "content": "145A Wolf Road Albany, NY",
             "loc_id": 78
           },
           {
@@ -137,37 +137,37 @@ $.get("https://api.ipdata.co", function(response) {
           {
             "latitude": "42.99441100",
             "longitude": "-70.96750000",
-            "content": "Pure Hockey #46>40 Industrial Drive Exeter, NH",
+            "content": "40 Industrial Drive Exeter, NH",
             "loc_id": 46
           },
           {
             "latitude": "43.04814500",
             "longitude": "-71.43540600",
-            "content": "Pure Hockey #47>1271 Hooksett Road Hooksett, NH",
+            "content": "1271 Hooksett Road Hooksett, NH",
             "loc_id": 47
           },
           {
             "latitude": "41.09438800",
             "longitude": "-73.44919400",
-            "content": "Pure Hockey #48>677 Connecticut Avenue Norwalk, CT",
+            "content": "677 Connecticut Avenue Norwalk, CT",
             "loc_id": 48
           },
           {
             "latitude": "40.91284700",
             "longitude": "-73.77483000",
-            "content": "Pure Hockey #49>310 Main St New Rochelle, NY",
+            "content": "310 Main St New Rochelle, NY",
             "loc_id": 49
           },
           {
             "latitude": "40.85473400",
             "longitude": "-73.18895600",
-            "content": "Pure Hockey #19>134 E. Main Street Suite #6 Smithtown, NY",
+            "content": "134 E. Main Street Suite #6 Smithtown, NY",
             "loc_id": 19
           },
           {
             "latitude": "40.74881000",
             "longitude": "-73.61710200",
-            "content": "Pure Hockey #67>231 Glen Cove Rd Carle Place, NY",
+            "content": "231 Glen Cove Rd Carle Place, NY",
             "loc_id": 67
           },
           {
@@ -179,13 +179,13 @@ $.get("https://api.ipdata.co", function(response) {
           {
             "latitude": "42.97975000",
             "longitude": "-78.81285800",
-            "content": "Pure Hockey #70>3265 Sheridan Drive Amherst, NY",
+            "content": "3265 Sheridan Drive Amherst, NY",
             "loc_id": 70
           },
           {
             "latitude": "43.07978800",
             "longitude": "-77.62811500",
-            "content": "Pure Hockey #75>1000 Hylan Drive Rochester, NY",
+            "content": "1000 Hylan Drive Rochester, NY",
             "loc_id": 75
           },
           {
