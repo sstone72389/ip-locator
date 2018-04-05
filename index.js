@@ -343,9 +343,21 @@ $.get("https://api.ipdata.co", function(response) {
       longitude: lon1
     },
     closest = closestLocation(targetLocation, data.Locations.Location);
+
   console.log("You're Closest Store is: ", closest);
-  $("#closestLocation").append(JSON.stringify(closest))
+  $("#closestLocation").append(JSON.stringify(closest, undefined, 2))
   // closest is now the location that is closest to the target location
+
+
+  // use this new value to find the NEXT closest store (first remove the inital result and searh again)
+  var removePlace = data.Locations.Location.indexOf(closest)
+  if(removePlace != -1) {
+	data.Locations.Location.splice(removePlace, 1);
+}
+  closest2 = closestLocation(targetLocation, data.Locations.Location);
+
+  console.log("You're Second Closest Store is: ", closest2);
+  $("#closestLocation2").append(JSON.stringify(closest2, undefined, 2))
 
   console.log("lat1 = " + lat1 + " lon1 = " + lon1);
 }, "jsonp");
