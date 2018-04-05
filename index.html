@@ -5,28 +5,23 @@
   <meta charset="utf-8">
   <title>IP-locate</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./index.js"></script>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <h1>Location without permission test</h1>
 
-  <p>This is a test to see if I can determine location without the use of the browsers built in geloaction service. Though that service is set up as such for security purposes, there may be times you don't want to use it.
+  <p>This is a test to see if I can determine location without the use of the browsers built in geloaction service. Though that service is set up as such for security purposes, there may be times you don't want to use it. Providing no context for location services is generally frowned upon in the industry.</p>
 
-  A usage ecxample is a company that wants to display the closest store location on page load without asking the user, as one would risk the chance of being blocked by that user permanently. Providing no context for location services is generally frowned upon in the industry.</p>
-
-  <p id=injectLocation> Your closest approximate location is: </p>
+  <p id=injectLocation> Your current location: </p>
 
   <pre id="response"></pre>
 
-  <p>As you can see, this is not the most accuarate of services and should be used with caution. There are paid services that provide a greater amount of accuracy.</p>
+  <p>Your closest store is: </p>
 
-  <p><a href="https://www.maxmind.com/en/geoip-demo">This is another</a> that does provide a "paid and more accurate service for IP location."</p>
-
-  <script>
-    $.get("https://api.ipdata.co", function(response) {
-      $("#response").html(JSON.stringify(response, null, 4));
-    }, "jsonp");
-  </script>
+  <pre id="closestLocation"></pre>
+  
 </body>
 
 </html>
