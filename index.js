@@ -78,6 +78,7 @@ $.get("https://api.ipdata.co", function(response) {
             "latitude": "42.08056700",
             "longitude": "-71.37411600",
             "content": "509 East Central Street Franklin, MA",
+            "link": '<div class="store-name"><a href="https://www.purehockey.com/store.aspx?CDT=636586027819716067&loc_id=26">Franklin</a></div>',
             "loc_id": 26
           },
           {
@@ -114,6 +115,7 @@ $.get("https://api.ipdata.co", function(response) {
             "latitude": "42.41884300",
             "longitude": "-71.10665000",
             "content": "70 Salem Street Medford, MA",
+            "link": '<a href="https://www.purehockey.com/store.aspx?CDT=636586027819716067&loc_id=34">Medford</a>',
             "loc_id": 34
           },
           {
