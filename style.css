@@ -10,3 +10,8 @@
 .prettyPlaces a {
   color: lightgray;
 }
+
+
+.prettyPlaces a:hover {
+  color: darkgray;
+}
