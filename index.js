@@ -395,20 +395,49 @@ $.get("https://api.ipdata.co", function(response) {
     },
     closest = closestLocation(targetLocation, data.Locations.Location);
 
-  console.log("You're Closest Store is: ", closest);
   $("#closestLocation").append(JSON.stringify(closest, undefined, 2))
   // closest is now the location that is closest to the target location
 
+  // use haversine to caculate actual distance in miles
+  function getDistanceFromLatLonInMi(lat1, lon1, lat2, lon2) {
+    var R = 3959; // Radius of the earth in mi
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return d;
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180)
+  }
+
+  var totalDist = getDistanceFromLatLonInMi(lat1, lon1, closest.latitude, closest.longitude)
+
+  console.log("totalDist to closest store = " + totalDist + " miles");
+
+  console.log("You're Closest Store is: ", closest);
 
   // use this new value to find the NEXT closest store (first remove the inital result and searh again)
-  var removePlace = data.Locations.Location.indexOf(closest)
-  if(removePlace != -1) {
-	data.Locations.Location.splice(removePlace, 1);
-}
+  var removePlace = data.Locations.Location.indexOf(closest);
+  if (removePlace != -1) {
+    data.Locations.Location.splice(removePlace, 1);
+  }
   closest2 = closestLocation(targetLocation, data.Locations.Location);
 
   console.log("You're Second Closest Store is: ", closest2);
-  $("#closestLocation2").append(JSON.stringify(closest2, undefined, 2))
+  $("#closestLocation2").append(JSON.stringify(closest2, undefined, 2));
 
-  $(".prettyPlaces").append("Your two closest stores are: " + closest.link + " and " + closest2.link)
+  if (totalDist > 50) {
+    $(".prettyPlaces").html("Sorry, there are no stores within 50 miles of your location");
+  } else {
+    $(".prettyPlaces").append("Your two closest stores are: " + closest.link + " and " + closest2.link);
+  }
+
+  // below is a hardcoded example simply to show the HTML that will be displayed if need be
+    $(".prettyPlaces2").html("Sorry, there are no stores within 50 miles of your location");
 }, "jsonp");
