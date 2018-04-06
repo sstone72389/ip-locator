@@ -410,5 +410,5 @@ $.get("https://api.ipdata.co", function(response) {
   console.log("You're Second Closest Store is: ", closest2);
   $("#closestLocation2").append(JSON.stringify(closest2, undefined, 2))
 
-  $(".prettyPlaces").append("Your two closest stores are: " + closest.content + " and " + closest2.content)
+  $(".prettyPlaces").append("Your two closest stores are: " + closest.link + " and " + closest2.link)
 }, "jsonp");

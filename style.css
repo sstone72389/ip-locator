@@ -1,6 +1,12 @@
 .prettyPlaces {
+  padding: 10px;
   font-family: Verdana;
-  max-width: 748px;
+  width: auto;
+  max-width: 500px;
   background: darkred;
   color: #fff;
+}
+
+.prettyPlaces a {
+  color: lightgray;
 }
