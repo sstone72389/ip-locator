@@ -439,5 +439,5 @@ $.get("https://api.ipdata.co", function(response) {
   }
 
   // below is a hardcoded example simply to show the HTML that will be displayed if need be
-    $(".prettyPlaces2").html("Sorry, there are no stores within 50 miles of your location");
+    // $(".prettyPlaces2").html("Sorry, there are no stores within 50 miles of your location");
 }, "jsonp");
